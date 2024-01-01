@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <title>Girasol</title>
+</head>
+
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #87CEEB;
+        /* Evita la barra de desplazamiento en el cuerpo y el html */
+    }
+
+    .zacate-container {
+        position: relative;
+        width: 100vw;
+        height: 50vh;
+        margin-top: 50vh;
+        background-color: #1aaa157e;
+
+    }
+
+    .zacate {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 20%;
+        animation: leafMovement 3s infinite linear;
+    }
+
+    @keyframes leafMovement {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(10px);
+            /* Cambia el valor según sea necesario */
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .leaf1 {
+        position: absolute;
+        bottom: 0;
+        width: 10vmin;
+        height: 20vmin;
+        border-top-left-radius: 100%;
+        transform-origin: bottom center;
+
+
+    }
+
+    .leaf-0 {
+        border-left: 2vmin solid #1aaa15;
+    }
+
+    .leaf-1 {
+        transform: rotateY(180deg);
+        border-left: 2vmin solid #1aaa15;
+    }
+
+    .leaf-2 {
+        transform: rotateZ(20deg);
+        border-left: 2vmin solid #1aaa15;
+    }
+
+    .leaf-3 {
+        transform: rotateZ(-20deg);
+        border-left: 2vmin solid #1aaa15;
+    }
+
+    /* Nuevas hojas */
+    .leaf-4 {
+        transform: rotateZ(45deg);
+        border-left: 2vmin solid #1aaa15;
+    }
+
+    .flower {
+        height: 285px;
+        width: 200px;
+        margin: 0px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 100;
+        transform: scale(1);
+        animation: leafMovement 3s infinite linear;
+    }
+
+
+
+    .mid {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        transform: translate(-40%, 0);
+        border-radius: 50%;
+        background: radial-gradient(circle, #000, #ff5e00, #000);
+        z-index: 6;
+        background-size: 5px 5px;
+
+    }
+
+    .Petal1 {
+        position: absolute;
+        left: 40px;
+        z-index: 5;
+        width: 120px;
+        height: 30px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ff5e00, #ffbb00);
+        filter: drop-shadow(0 0 2px #e05200);
+
+    }
+
+    .Petal1.p1 {
+        transform: rotate(22.5deg);
+    }
+
+    .Petal1.p2 {
+        transform: rotate(67.5deg);
+    }
+
+    .Petal1.p3 {
+        transform: rotate(110.5deg);
+    }
+
+    .Petal1.p4 {
+        transform: rotate(157.5deg);
+    }
+
+    .Petal2 {
+        position: absolute;
+        left: 0;
+        z-index: 4;
+        width: 200px;
+        height: 40px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ff5e00, #fbd702);
+        filter: drop-shadow(0 0 2px #e05200);
+
+    }
+
+    .Petal2.p2 {
+        transform: rotate(90deg);
+    }
+
+    .Petal2.p3 {
+        transform: rotate(45deg);
+    }
+
+    .Petal2.p4 {
+        transform: rotate(135deg);
+    }
+
+    .Petal3 {
+        position: absolute;
+        left: 0px;
+        z-index: 3;
+        width: 200px;
+        height: 40px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ff5e00, #fbd702);
+
+    }
+
+
+    .Petal3.p1 {
+        transform: rotate(22.5deg);
+    }
+
+    .Petal3.p2 {
+        transform: rotate(67.5deg);
+    }
+
+    .Petal3.p3 {
+        transform: rotate(110.5deg);
+    }
+
+    .Petal3.p4 {
+        transform: rotate(157.5deg);
+    }
+
+    .rama {
+        width: 15px;
+        bottom: 0;
+        background-color: #498b13;
+        height: 0;
+        animation: grow 3s forwards;
+        z-index: 1;
+    }
+
+    @keyframes grow {
+        to {
+            height: 325px;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="cloud-container"
+        style="width: 100%; height: 40px; display: flex; justify-content: center; text-align: center;">
+        <div class="zuar" style="font-family: 'Bungee Spice', sans-serif; font-size: 40px; animation: fadeIn 5s forwards;">
+            <h1>Z y G</h1>
+            <h2>Feliz año</h2>
+        </div>
+    </div>
+
+    <div class="zacate-container">
+        <div class="zacate">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 5%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 15%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 20%; ">
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 30%; ">
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 35%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacat" style="left: 40%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 45%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+
+        <div class="zacate" style="left: 50%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 55%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 60%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 70%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+
+        <div class="zacate" style="left: 80%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 90%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="zacate" style="left: 100%;">
+            <div class="leaf1 leaf-0"></div>
+            <div class="leaf1 leaf-1"></div>
+            <div class="leaf1 leaf-2"></div>
+            <div class="leaf1 leaf-3"></div>
+            <div class="leaf1 leaf-4"></div>
+            <div class="leaf1 leaf-5"></div>
+            <div class="leaf1 leaf-6"></div>
+            <div class="leaf1 leaf-7"></div>
+        </div>
+
+        <div class="flower">
+            <div class="rama">
+                <div class="mid">
+                </div>
+                <div class="Petal1 p1">
+                </div>
+                <div class="Petal1 p2">
+                </div>
+                <div class="Petal1 p3">
+                </div>
+                <div class="Petal1 p4">
+                </div>
+                <div class="Petal2 p1">
+                </div>
+                <div class="Petal2 p2">
+                </div>
+                <div class="Petal2 p3">
+                </div>
+                <div class="Petal2 p4">
+                </div>
+                <div class="Petal3 p1">
+                </div>
+                <div class="Petal3 p2">
+                </div>
+                <div class="Petal3 p3">
+                </div>
+                <div class="Petal3 p4">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
